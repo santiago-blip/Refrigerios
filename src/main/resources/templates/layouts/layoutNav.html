@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>refrigerios la 80</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" th:href="@{css/index.css}">
+    </head>
+    <body>
+        <div class="contenedor">
+            <!--MENÚ-->
+            <div th:fragment="nav" class="container-nav">
+                <ul class="menu">
+                    <li th:class="${#httpServletRequest.requestURI == '/' ? 'liNavActive':'liNav'}"><a th:href="@{/}" class="aNav">Inicio</a></li>
+                    <li th:class="liNav"><a href="#targetNosotros" class="aNav">Nosotros</a></li>
+                    <li th:class="liNav"><a href="#targetProductos" class="aNav">Productos</a></li>
+                    <li th:class="${#httpServletRequest.requestURI == '/carrito' ? 'liCarritoActive':'liNav'}"><a class="aNav aCarrito" th:href="@{/carrito}">Carrito <div th:if="${listaCarrito != null}" class="divCarrito"><p class="pCarrito">[[${listaCarrito}]]</p></div></a></li>
+                    <li sec:authorize="!isAuthenticated()" class="liNav" id="iniciarSesion">Iniciar sesión</li>
+                    <li sec:authorize="isAuthenticated()" class="liNav">
+                        <form th:action="@{/logout}">
+                            <input type="submit" name="logout" value="Cerrar sesión" class="cerrarS">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <!--MENÚ-->
+        </div>
+    </body>
+</html>
