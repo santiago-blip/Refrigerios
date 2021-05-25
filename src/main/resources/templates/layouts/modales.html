@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" th:href="@{css/modalesCss.css}">
+    </head>
+    <body>
+        <div class="contenedorModales" th:fragment="modales">
+            <!--MODAL INICIAR SESIÓN 
+            <div class="modalSesion">
+                <form class="formularioSesion">
+                    <div class="divSesion">
+                        <label class="lblSesion" for="usuario">Usuario</label>
+                        <input class="inputSesion" type="text" id="usuario">
+                    </div>
+                    <div class="divSesion">
+                        <label class="lblSesion" for="pass">Contraseña</label>
+                        <input class="inputSesion" id="pass">
+                    </div>
+                    <input type="submit" value="Enviar" class="btnEnvSesion">
+                </form>
+                <hr class="hre">
+                <div class="linksSesion">
+                    <a>¿No tienes cuenta? Registrarse</a>
+                    <a>Recuperar contraseña</a>
+                </div>
+            </div>
+            <!--MODAL INICIAR SESIÓN-->
+            <!--MODAL REGISTRO
+            <div class="modalRegistro">
+                <form class="formularioRegistro">
+                    <div class="divRegistro">
+                        <label class="lblRegistro">Nombre</label>
+                        <input class="inputRegistro" type="text">
+                    </div>
+                    <div class="divRegistro">
+                        <label class="lblRegistro">Apellido</label>
+                        <input class="inputRegistro" type="text">
+                    </div>
+                    <div class="divRegistro">
+                        <label class="lblRegistro">Contraseña</label>
+                        <input class="inputRegistro" type="text">
+                    </div>
+                    <div class="divRegistro">
+                        <label class="lblRegistro">Dirección(opcional)</label>
+                        <input class="inputRegistro" type="text">
+                    </div>
+                    <input type="submit" value="Registrarse" class="btnRegistro">
+                </form>
+                <div class="linkRegistro">
+                    <a>Iniciar sesión</a>
+                </div>
+            </div>
+            <!--MODAL REGISTRO-->
+            <!--MODAL RECUPERAR CONTRASEÑA-->
+            <div class="modalRecuperar">
+                <form>
+                    <input type="text" class="inpRecuperar" placeholder="Escriba el correo con el que se registró">
+                    <input type="submit" value="Enviar" class="envRec">
+                </form>
+                <div class="linksSesion">
+                    <a>Iniciar sesión</a>
+                    <a>Registrarse</a>
+                </div>
+            </div>
+            <!--MODAL RECUPERAR CONTRASEÑA-->
+        </div>
+    </body>
+</html>
