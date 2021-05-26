@@ -13,9 +13,9 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" th:href="@{css/modalesCss.css}">
     </head>
     <body>
-        <div class="contenedorModales" th:fragment="modales">
-            <!--MODAL INICIAR SESIÓN 
-            <div class="modalSesion">
+        <div class="contenedorModales" th:fragment="modales" id="contenedorModal">
+            <!--MODAL INICIAR SESIÓN -->
+            <div class="modalSesion" id="modalSesion">
                 <form class="formularioSesion">
                     <div class="divSesion">
                         <label class="lblSesion" for="usuario">Usuario</label>
@@ -23,19 +23,20 @@ and open the template in the editor.
                     </div>
                     <div class="divSesion">
                         <label class="lblSesion" for="pass">Contraseña</label>
-                        <input class="inputSesion" id="pass">
+                        <input class="inputSesion" id="pass" type="password">
+                        <i class="far fa-eye" id="eyeUpS"></i>
                     </div>
                     <input type="submit" value="Enviar" class="btnEnvSesion">
                 </form>
                 <hr class="hre">
                 <div class="linksSesion">
-                    <a>¿No tienes cuenta? Registrarse</a>
-                    <a>Recuperar contraseña</a>
+                    <a id="registrarse">¿No tienes cuenta? Registrarse</a>
+                    <a id="recuperar">Recuperar contraseña</a>
                 </div>
             </div>
             <!--MODAL INICIAR SESIÓN-->
-            <!--MODAL REGISTRO
-            <div class="modalRegistro">
+            <!--MODAL REGISTRO -->
+            <div class="modalRegistro" id="modalRegistro">
                 <form class="formularioRegistro">
                     <div class="divRegistro">
                         <label class="lblRegistro">Nombre</label>
@@ -47,7 +48,8 @@ and open the template in the editor.
                     </div>
                     <div class="divRegistro">
                         <label class="lblRegistro">Contraseña</label>
-                        <input class="inputRegistro" type="text">
+                        <input class="inputRegistro" type="password" id="pass2">
+                        <i class="far fa-eye" id="eyeUp"></i>
                     </div>
                     <div class="divRegistro">
                         <label class="lblRegistro">Dirección(opcional)</label>
@@ -56,19 +58,19 @@ and open the template in the editor.
                     <input type="submit" value="Registrarse" class="btnRegistro">
                 </form>
                 <div class="linkRegistro">
-                    <a>Iniciar sesión</a>
+                    <a id="iniciarSesionRegistro">Iniciar sesión</a>
                 </div>
             </div>
             <!--MODAL REGISTRO-->
-            <!--MODAL RECUPERAR CONTRASEÑA-->
-            <div class="modalRecuperar">
+            <!--MODAL RECUPERAR CONTRASEÑA -->
+            <div class="modalRecuperar" id="modalRecuperar">
                 <form>
                     <input type="text" class="inpRecuperar" placeholder="Escriba el correo con el que se registró">
                     <input type="submit" value="Enviar" class="envRec">
                 </form>
                 <div class="linksSesion">
-                    <a>Iniciar sesión</a>
-                    <a>Registrarse</a>
+                    <a id="iniciarRecuperar">Iniciar sesión</a>
+                    <a id="registrarseRecuperar">Registrarse</a>
                 </div>
             </div>
             <!--MODAL RECUPERAR CONTRASEÑA-->

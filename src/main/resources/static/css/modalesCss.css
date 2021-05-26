@@ -16,12 +16,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    visibility: hidden;
+}
+.contenedorModalesMostrar{
+    visibility: visible;
 }
 /*MODAL SESIÓN*/
 .modalSesion{
     width: 30%;
     color: #d5ba7f;
     background-color: #680a0a;
+    position: absolute;
+    visibility: hidden;
 }
 .formularioSesion{
     background-color: #680a0a;
@@ -48,7 +54,7 @@
     width: 50%;
     margin-top: 10px;
     border: none;
-    background-color: #DEE2E6;;
+    background-color: #DEE2E6;
 }
 .btnEnvSesion{
     padding: 8px;
@@ -85,11 +91,21 @@
     background-color: #DEE2E6;
     color: #680a0a;
 }
+#eyeUpS{
+    position: absolute;
+    right: 150px;
+    top: 19px;
+    cursor: pointer;
+    color: #680a0a;
+    background-color: #DEE2E6;
+}
 /*MODAL SESIÓN*/
 /*MODAL REGISTRO*/
 .modalRegistro{
     width: 40%;
     border-radius: 10px;
+    position: absolute;
+    visibility: hidden;
 }
 .formularioRegistro{
     width: 100%;
@@ -126,13 +142,19 @@
     color: #F3EEDD;
 }
 .linkRegistro{
-   display: flex;
-   justify-content: center;
-   padding: 10px;
-   border: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: 10px;
 }
 .linkRegistro a:hover{
     color: #680a0a;
+    cursor: pointer;
+}
+#eyeUp{
+    position: absolute;
+    right: 160px;
+    top: 2px;
     cursor: pointer;
 }
 /*MODAL REGISTRO*/
@@ -140,6 +162,7 @@
 .modalRecuperar{
     width: 20%;
     border-radius: 10px;
+    visibility: hidden;
 }
 .modalRecuperar form{
     padding: 10px;
@@ -165,5 +188,8 @@
 .envRec:hover{
     background-color: #680a0a;
     color: #F3EEDD;
+}
+.modalVisible{
+    visibility: visible;
 }
 /*MODAL RECUPERAR*/
