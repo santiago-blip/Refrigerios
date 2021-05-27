@@ -37,18 +37,29 @@ and open the template in the editor.
             <!--MODAL INICIAR SESIÓN-->
             <!--MODAL REGISTRO -->
             <div class="modalRegistro" id="modalRegistro">
-                <form class="formularioRegistro">
+                <form class="formularioRegistro" id="formularioRegistro">
+                    <div class="divRegistro">
+                        <label class="lblRegistro">Correo</label>
+                        <input class="inputRegistro" type="text" id="correoRegistro">
+                        <label id="lblcorreoErr" class="span">Correo inválido</label>
+                    </div>
                     <div class="divRegistro">
                         <label class="lblRegistro">Nombre</label>
-                        <input class="inputRegistro" type="text">
+                        <input class="inputRegistro" type="text" id="inputNombreR">
+                        <label id="lblNombreErr1" class="span">Nombre inválido, debe tener más caracteres.</label>
+                        <label id="lblNombreErr2" class="span">Nombre inválido, no puede tener números.</label>
                     </div>
                     <div class="divRegistro">
                         <label class="lblRegistro">Apellido</label>
-                        <input class="inputRegistro" type="text">
+                        <input class="inputRegistro" type="text" id="apellidoRegistro">
+                        <label id="lblApellidoErr1" class="span">Apellido inválido, debe tener más caracteres.</label>
+                        <label id="lblApellidoErr2" class="span">Apellido inválido, no puede tener números.</label>
                     </div>
                     <div class="divRegistro">
                         <label class="lblRegistro">Contraseña</label>
                         <input class="inputRegistro" type="password" id="pass2">
+                        <label id="lblpass2Err1" class="span">Contraseña inválida, debe tener más caracteres.</label>
+                        <label id="lblpass2Err2" class="span">Contraseña inválida, debe tener números y letras.</label>
                         <i class="far fa-eye" id="eyeUp"></i>
                     </div>
                     <div class="divRegistro">
@@ -64,8 +75,9 @@ and open the template in the editor.
             <!--MODAL REGISTRO-->
             <!--MODAL RECUPERAR CONTRASEÑA -->
             <div class="modalRecuperar" id="modalRecuperar">
-                <form>
-                    <input type="text" class="inpRecuperar" placeholder="Escriba el correo con el que se registró">
+                <form id="formRecup">
+                    <input type="text" class="inpRecuperar" id="inpRecuperar" placeholder="Escriba el correo con el que se registró">
+                    <label id="correoRecup" class="spanR">Correo inválido.</label>
                     <input type="submit" value="Enviar" class="envRec">
                 </form>
                 <div class="linksSesion">

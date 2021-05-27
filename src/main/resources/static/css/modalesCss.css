@@ -157,11 +157,18 @@
     top: 2px;
     cursor: pointer;
 }
+.span{
+    position: absolute;
+    top: 40px;
+    color: red;
+    visibility: hidden;
+}
 /*MODAL REGISTRO*/
 /*MODAL RECUPERAR*/
 .modalRecuperar{
     width: 20%;
     border-radius: 10px;
+    position: relative;
     visibility: hidden;
 }
 .modalRecuperar form{
@@ -183,7 +190,7 @@
     padding: 5px;
     border: 1px solid;
     cursor:pointer;
-    margin-top:10px;
+    margin-top:15px;
 }
 .envRec:hover{
     background-color: #680a0a;
@@ -192,4 +199,12 @@
 .modalVisible{
     visibility: visible;
 }
+.spanR{
+    position: absolute;
+    color: red;
+    left: 145px;
+    top: 50px;
+    visibility: hidden;
+}
+.spanMostrar{visibility: visible};
 /*MODAL RECUPERAR*/
