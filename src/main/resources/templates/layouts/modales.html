@@ -16,10 +16,10 @@ and open the template in the editor.
         <div class="contenedorModales" th:fragment="modales" id="contenedorModal">
             <!--MODAL INICIAR SESIÓN -->
             <div class="modalSesion" id="modalSesion">
-                <form class="formularioSesion">
+                <form class="formularioSesion" th:action="@{/login}" method="POST">
                     <div class="divSesion">
-                        <label class="lblSesion" for="usuario">Usuario</label>
-                        <input class="inputSesion" type="text" id="usuario">
+                        <label class="lblSesion" name="username" for="usuario">Usuario</label>
+                        <input class="inputSesion" name="password" type="text" id="usuario">
                     </div>
                     <div class="divSesion">
                         <label class="lblSesion" for="pass">Contraseña</label>
@@ -37,34 +37,35 @@ and open the template in the editor.
             <!--MODAL INICIAR SESIÓN-->
             <!--MODAL REGISTRO -->
             <div class="modalRegistro" id="modalRegistro">
-                <form class="formularioRegistro" id="formularioRegistro">
+                <form class="formularioRegistro" id="formularioRegistro" th:object="${usuario}" th:action="@{/registro}" method="POST">
+                    <input type="hidden" th:field="*{idUsuario}">
                     <div class="divRegistro">
                         <label class="lblRegistro">Correo</label>
-                        <input class="inputRegistro" type="text" id="correoRegistro">
+                        <input class="inputRegistro" type="text" id="correoRegistro" th:field="*{correo}">
                         <label id="lblcorreoErr" class="span">Correo inválido</label>
                     </div>
                     <div class="divRegistro">
                         <label class="lblRegistro">Nombre</label>
-                        <input class="inputRegistro" type="text" id="inputNombreR">
+                        <input class="inputRegistro" type="text" id="inputNombreR" th:field="*{nombre}">
                         <label id="lblNombreErr1" class="span">Nombre inválido, debe tener más caracteres.</label>
                         <label id="lblNombreErr2" class="span">Nombre inválido, no puede tener números.</label>
                     </div>
                     <div class="divRegistro">
                         <label class="lblRegistro">Apellido</label>
-                        <input class="inputRegistro" type="text" id="apellidoRegistro">
+                        <input class="inputRegistro" type="text" id="apellidoRegistro" th:field="*{apellido}">
                         <label id="lblApellidoErr1" class="span">Apellido inválido, debe tener más caracteres.</label>
                         <label id="lblApellidoErr2" class="span">Apellido inválido, no puede tener números.</label>
                     </div>
                     <div class="divRegistro">
                         <label class="lblRegistro">Contraseña</label>
-                        <input class="inputRegistro" type="password" id="pass2">
+                        <input class="inputRegistro" type="password" id="pass2" th:field="*{contrasena}">
                         <label id="lblpass2Err1" class="span">Contraseña inválida, debe tener más caracteres.</label>
                         <label id="lblpass2Err2" class="span">Contraseña inválida, debe tener números y letras.</label>
                         <i class="far fa-eye" id="eyeUp"></i>
                     </div>
                     <div class="divRegistro">
                         <label class="lblRegistro">Dirección(opcional)</label>
-                        <input class="inputRegistro" type="text">
+                        <input class="inputRegistro" type="text" th:field="*{direccion}">
                     </div>
                     <input type="submit" value="Registrarse" class="btnRegistro">
                 </form>
