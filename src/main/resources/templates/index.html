@@ -12,6 +12,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" th:href="@{css/index.css}">
         <link rel="stylesheet" type="text/css" th:href="@{css/modalesCss.css}">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link rel="icon" type="image/png" th:href="@{img/icon.png}">
     </head>
@@ -53,5 +54,14 @@ and open the template in the editor.
         </div>
         <script th:src="@{js/modales.js}"></script>
         <script th:src="@{js/ValidacionesForm.js}"></script>
+
+        <!--SWEET ALERT-->
+        <script th:if="${registroExitoso != null}">swal("¡Registro exitoso!", "Su registro ha finalizado de manera exitosa."+"\n"+"Se enviará un comprobante a su correo.", "success");</script>
+        <script th:if="${recuperadoEnv != null}">swal("¡Código enviado!", "Se ha enviado el código para reestablecer la contraseña al correo registrado.", "success");</script>
+        <script th:if="${passCamb != null}">swal("¡Contraseña cambiada!", "Se ha cambiado exitosamente la contraseña.", "success");</script>
+        <script th:if="${correoExiste != null}">swal("¡Error en el registro!", "La cuenta que intenta registrar ya se encuentra en el sistema.", "error");</script>
+        <script th:if="${recuperarNoFind != null}">swal("¡Error!", "La cuenta que intenta registrar no se encuentra en el sistema.", "error");</script>
+        <script th:if="${codigoExp != null}">swal("¡Error!", "El código ha expirado o ya no está disponible, debe generar otro.", "error");</script>
+        <script th:if="${malLogin != null}">swal("¡Error!", "El correo ingresado o la contraseña, está incorrecto.", "error");</script>
     </body>
 </html>
